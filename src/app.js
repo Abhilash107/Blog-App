@@ -1,5 +1,5 @@
 import express from "express"
-import CookieParser from "cookie-parser"
+import cookieParser from "cookie-parser";
 import cors from 'cors'
 
 
@@ -22,7 +22,7 @@ app.use(express.urlencoded(
 ))
 
 app.use(express.static("public"))
-app.use(CookieParser())
+app.use(cookieParser());
 
 
 export {app}
