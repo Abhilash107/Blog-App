@@ -1,5 +1,6 @@
 import mongoose, {Schema} from "mongoose";
 import {User} from '../models/user.models.js'
+import { Category } from "./category.models.js";
 
 const postSchema = new Schema({
     title:{
@@ -14,8 +15,14 @@ const postSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User"
     },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category",
+        required: true
+    },
+
     tags: {
-        type: String,
+        type: [String],
     },
     coverImage: {
         type:String,
